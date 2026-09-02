@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateStatus("Analyzing...", "#fbbf24");
 
         try {
-            const response = await fetch('http://127.0.0.1:5643/predict', {
+            const response = await fetch('https://ev-faliure-1-auyq.onrender.com', {
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json',
