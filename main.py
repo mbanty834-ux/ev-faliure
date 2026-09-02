@@ -3,6 +3,17 @@ from pydantic import BaseModel, Field
 import pandas as pd
 import joblib
 
+
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # In production, restrict this to your exact frontend domain
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app = FastAPI(
     title="EV Battery Failure Prediction API",
     version="1.0.0"
