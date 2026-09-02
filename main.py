@@ -4,6 +4,13 @@ import pandas as pd
 import joblib
 
 
+
+
+app = FastAPI(
+    title="EV Battery Failure Prediction API",
+    
+)
+
 from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
@@ -13,12 +20,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-app = FastAPI(
-    title="EV Battery Failure Prediction API",
-    version="1.0.0"
-)
-
 
 model = joblib.load("" \
 "battery_failure_model.pkl")
