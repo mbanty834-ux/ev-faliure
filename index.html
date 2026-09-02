@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>EV Battery Failure Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+
+    <div class="background">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="grid"></div>
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-bolt"></i>
+            EV<span>AI</span>
+        </div>
+
+        <div class="nav-title">
+            Battery Intelligence System
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            System Online
+        </div>
+
+    </nav>
+
+
+    <!-- Main Container -->
+
+    <main class="container">
+
+
+        <!-- Hero Section -->
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <p class="subtitle">
+                    AI POWERED VEHICLE ANALYTICS
+                </p>
+
+                <h1>
+                    Predict Your
+                    <span>EV Battery Health</span>
+                </h1>
+
+                <p class="description">
+
+                    Advanced machine learning technology to predict
+                    electric vehicle battery failure using real-time
+                    battery health and vehicle performance data.
+
+                </p>
+
+            </div>
+
+
+            <!-- 3D Battery -->
+
+            <div class="battery-scene">
+
+                <div class="battery-3d">
+
+                    <div class="battery-top"></div>
+
+                    <div class="battery-body">
+
+                        <div class="battery-bars">
+
+                            <div class="bar active"></div>
+                            <div class="bar active"></div>
+                            <div class="bar active"></div>
+                            <div class="bar active"></div>
+                            <div class="bar active"></div>
+
+                        </div>
+
+                        <div class="battery-glow"></div>
+
+                    </div>
+
+                    <div class="battery-terminal"></div>
+
+                </div>
+
+
+                <div class="battery-info">
+
+                    <div>
+                        <span>AI STATUS</span>
+                        <strong>READY</strong>
+                    </div>
+
+                    <div>
+                        <span>MONITORING</span>
+                        <strong>ACTIVE</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Dashboard -->
+
+        <section class="dashboard">
+
+
+            <!-- Input Panel -->
+
+            <div class="glass-card input-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+                            <i class="fa-solid fa-sliders"></i>
+                            Battery Parameters
+                        </h2>
+
+                        <p>
+                            Enter EV battery information
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="predictionForm">
+
+
+                    <!-- Vehicle Information -->
+
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-car"></i>
+                        Vehicle Information
+                    </h3>
+
+
+                    <div class="input-grid">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Battery Capacity (kWh)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="battery_capacity_kwh"
+                                value="60.5"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Odometer (KM)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="odometer_km"
+                                value="45000"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Vehicle Age (Years)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="vehicle_age_years"
+                                value="4"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Cycle Count
+                            </label>
+
+                            <input
+                                type="number"
+                                id="cycle_count"
+                                value="800"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Battery Health -->
+
+                    <h3 class="section-title">
+
+                        <i class="fa-solid fa-heart-pulse"></i>
+
+                        Battery Health
+
+                    </h3>
+
+
+                    <div class="input-grid">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Battery Health (%)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="battery_health_percent"
+                                value="92.5"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                State of Charge (%)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="state_of_charge"
+                                value="75"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Depth of Discharge (%)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="depth_of_discharge"
+                                value="65"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                State of Health (%)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="state_of_health"
+                                value="90"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Technical Metrics -->
+
+                    <h3 class="section-title">
+
+                        <i class="fa-solid fa-microchip"></i>
+
+                        Technical Metrics
+
+                    </h3>
+
+
+                    <div class="input-grid">
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Cell Voltage STD
+                            </label>
+
+                            <input
+                                type="number"
+                                id="cell_voltage_std"
+                                value="0.025"
+                                step="0.001"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Max Temperature (°C)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="cell_temperature_max"
+                                value="42.5"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Internal Resistance
+                            </label>
+
+                            <input
+                                type="number"
+                                id="internal_resistance"
+                                value="0.015"
+                                step="0.001"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Capacity Loss (%)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="capacity_loss_percent"
+                                value="8.5"
+                                step="0.1"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Charging Interruptions
+                            </label>
+
+                            <input
+                                type="number"
+                                id="charging_interruptions"
+                                value="3"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label>
+                                Overcharge Events
+                            </label>
+
+                            <input
+                                type="number"
+                                id="overcharge_events"
+                                value="1"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        class="predict-btn"
+                    >
+
+                        <span>
+                            <i class="fa-solid fa-brain"></i>
+                            Predict Battery Failure
+                        </span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+
+
+            <!-- Result Panel -->
+
+            <div class="glass-card result-card">
+
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            AI Prediction
+
+                        </h2>
+
+                        <p>
+                            Machine Learning Analysis
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    class="result-content"
+                    id="resultContent"
+                >
+
+
+                    <div class="result-icon">
+
+                        <i
+                            class="fa-solid fa-battery-half"
+                            id="resultIcon"
+                        ></i>
+
+                    </div>
+
+
+                    <p class="result-label">
+                        Battery Status
+                    </p>
+
+
+                    <h1
+                        class="prediction-text"
+                        id="prediction"
+                    >
+
+                        Waiting for data
+
+                    </h1>
+
+
+
+                    <div class="confidence-box">
+
+                        <div class="confidence-header">
+
+                            <span>
+                                Prediction Confidence
+                            </span>
+
+                            <strong
+                                id="probability"
+                            >
+                                --
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                class="progress-bar"
+                                id="progressBar"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="analysis-status">
+
+                        <span
+                            class="pulse-dot"
+                        ></span>
+
+                        <span id="analysisText">
+
+                            AI model ready for analysis
+
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        <p>
+            EV Battery Failure Prediction System
+            <span>•</span>
+            Powered by Machine Learning
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
